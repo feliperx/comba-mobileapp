@@ -9,11 +9,6 @@ export function SignIn() {
 
   return (
     <View style={styles.container}>
-      <StatusBar 
-        barStyle={'light-content'}
-        backgroundColor={'transparent'}
-        translucent
-      />
       <Image
         source={IllustrationImage}
         style={styles.image}
