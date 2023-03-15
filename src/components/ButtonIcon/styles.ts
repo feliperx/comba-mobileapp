@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center', 
         borderRightWidth: 1, 
-        borderRightColor: theme.colors.lineButton, 
+        borderRightColor: theme.colors.line, 
     }, 
     icon: { 
         width: 24, 
@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center', 
         color: theme.colors.heading, 
         fontSize: 15,
+        fontFamily: theme.fonts.text500
 
     }
 })
