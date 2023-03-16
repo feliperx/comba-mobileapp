@@ -1,5 +1,5 @@
 import React from "react";
-import {StatusBar} from 'react-native';
+import { StatusBar } from "react-native";
 import { useFonts } from "expo-font";
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 import {
@@ -8,9 +8,10 @@ import {
 } from "@expo-google-fonts/rajdhani";
 import AppLoading from "expo-app-loading";
 
-import { SignIn } from "./src/screens/SignIn";
-import {Background} from './src/components/Background';
+import { Background } from "./src/components/Background";
+import { Routes } from "./src/routes";
 import { Home } from "./src/screens/Home";
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,15 +26,14 @@ export default function App() {
   }
 
   return (
-  <Background>
-    <StatusBar 
-      barStyle={'light-content'}
-      backgroundColor={'transparent'}
-      translucent
+    <Background>
+      <StatusBar
+        barStyle={"light-content"}
+        backgroundColor={"transparent"}
+        translucent
       />
 
-    <Home/>
+      <Routes/>
     </Background>
-  
   );
 }
