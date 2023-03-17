@@ -6,6 +6,7 @@ import { ButtonIcon } from "../../components/ButtonIcon";
 import { Profile } from "../../components/Profile";
 import { Avatar } from "../../components/Avatar";
 import { ButtonAdd } from "../../components/ButtonAdd";
+import { CategoryList } from "../../components/CategoryList";
 
 export function Home() {
     return (
@@ -16,6 +17,9 @@ export function Home() {
              <Profile/>
              <ButtonAdd/>
 
+            </View>
+            <View>
+                <CategoryList/>
             </View>
         </View>
     );
