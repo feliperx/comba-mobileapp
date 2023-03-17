@@ -10,6 +10,7 @@ export const styles = StyleSheet.create ({
     header: {
         flexDirection: 'row', 
         width: '100%',
+        justifyContent: 'space-between',
         paddingHorizontal: 24, 
         marginTop: getStatusBarHeight() + 26, 
         marginBottom: 42,

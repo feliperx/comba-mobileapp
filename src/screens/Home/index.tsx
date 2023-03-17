@@ -5,6 +5,7 @@ import IllustrationImage from "../../assets/illustration.png";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { Profile } from "../../components/Profile";
 import { Avatar } from "../../components/Avatar";
+import { ButtonAdd } from "../../components/ButtonAdd";
 
 export function Home() {
     return (
@@ -13,6 +14,7 @@ export function Home() {
 
              <Avatar imageUrl="https://github.com/feliperx.png"/>  
              <Profile/>
+             <ButtonAdd/>
 
             </View>
         </View>
