@@ -11,8 +11,6 @@ export function CategoryList() {
       showsHorizontalScrollIndicator={false} 
       contentContainerStyle={{paddingRight:40}}
     >
-  
- 
      </ScrollView>
   );
 }
