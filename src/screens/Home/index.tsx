@@ -26,6 +26,18 @@ export function Home() {
             category: '1', 
             date: '26/04 as 20h40', 
             description: 'Dia de ganhar mais xp'
+        },
+        {
+            id: '2',
+            guild: {
+                id: '1',
+                name: 'Legen.. wf ..dary', 
+                icon: null,
+                owner: true
+            },
+            category: '1', 
+            date: '26/04 as 20h40', 
+            description: 'Dia de ganhar mais xp'
         }
     ]
 
@@ -59,6 +71,8 @@ export function Home() {
                     renderItem= {({item}) => (
                         <Appointment data={item}/>
                     )}
+                    style={styles.matches}
+                    showsVerticalScrollIndicator={false}
                 />
             </View>
         </View>
