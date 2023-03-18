@@ -8,6 +8,7 @@ import { Avatar } from "../../components/Avatar";
 import { ButtonAdd } from "../../components/ButtonAdd";
 import { CategoryList } from "../../components/CategoryList";
 import { ListHeader } from "../../components/ListHeader";
+import { Appointment } from "../../components/Appointment";
 
 export function Home() {
 
@@ -56,7 +57,7 @@ export function Home() {
                     data={appointments}
                     keyExtractor={item => item.id}
                     renderItem= {({item}) => (
-                        <Text>{item.guild.name}</Text>
+                        <Appointment data={item}/>
                     )}
                 />
             </View>

@@ -4,6 +4,7 @@ import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";
+import { GuildIcon } from "../GuildIcon";
 
 export type GuildProps = {
 
@@ -29,9 +30,8 @@ export function Appointment({data, ...rest}: Props) {
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
-        
+        <GuildIcon/>
       </View>
-
     </RectButton>
   );
 }
