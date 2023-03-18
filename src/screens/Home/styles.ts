@@ -14,7 +14,8 @@ export const styles = StyleSheet.create ({
         paddingHorizontal: 24, 
         marginTop: getStatusBarHeight() + 26, 
         marginBottom: 42,
-
+    },
+    content: {
 
     }
 });

@@ -1,16 +1,32 @@
 import React, { useState } from "react";
-import { Text, View, TextInput, Image, StatusBar, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, Image, StatusBar, TouchableOpacity, FlatList } from "react-native";
+
 import { styles } from "./styles";
-import IllustrationImage from "../../assets/illustration.png";
-import { ButtonIcon } from "../../components/ButtonIcon";
+
 import { Profile } from "../../components/Profile";
 import { Avatar } from "../../components/Avatar";
 import { ButtonAdd } from "../../components/ButtonAdd";
 import { CategoryList } from "../../components/CategoryList";
+import { ListHeader } from "../../components/ListHeader";
 
 export function Home() {
 
     const [category, setCategory] = useState('');
+
+    const appointments = [
+        {
+            id: '1',
+            guild: {
+                id: '1',
+                name: 'Legen.. wf ..dary', 
+                icon: null,
+                owner: true
+            },
+            category: '1', 
+            date: '26/04 as 20h40', 
+            description: 'Dia de ganhar mais xp'
+        }
+    ]
 
     function handleCategorySelect(categoryId: string) {
         categoryId === category ? setCategory('') : setCategory(categoryId);
@@ -29,7 +45,19 @@ export function Home() {
                 <CategoryList
                     categorySelected={category} 
                     setCategory={handleCategorySelect}
-
+                />
+            </View>
+            <View style={styles.content}>
+                <ListHeader 
+                title='Partidas agendadas' 
+                subtitle='Total 7'
+                />
+                <FlatList
+                    data={appointments}
+                    keyExtractor={item => item.id}
+                    renderItem= {({item}) => (
+                        <Text>{item.guild.name}</Text>
+                    )}
                 />
             </View>
         </View>
