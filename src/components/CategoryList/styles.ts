@@ -3,17 +3,9 @@ import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create ({
     container: {
-        flex: 1,
-        flexDirection: 'row',
-        
+        minHeight: 120, 
+        maxHeight: 120, 
+        paddingLeft: 24,
     }, 
-    user: {
-        flexDirection: 'row',
-        
-    }, 
-
-
-
-
 
 });

@@ -9,6 +9,13 @@ import { ButtonAdd } from "../../components/ButtonAdd";
 import { CategoryList } from "../../components/CategoryList";
 
 export function Home() {
+
+    const [category, setCategory] = useState('');
+
+    function handleCategorySelect(categoryId: string) {
+        categoryId === category ? setCategory('') : setCategory(categoryId);
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}> 
@@ -19,7 +26,11 @@ export function Home() {
 
             </View>
             <View>
-                <CategoryList/>
+                <CategoryList
+                    categorySelected={category} 
+                    setCategory={handleCategorySelect}
+
+                />
             </View>
         </View>
     );
