@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  FlatList,
-} from "react-native";
+import { View, FlatList } from "react-native";
 
 import { styles } from "./styles";
 
@@ -13,6 +10,7 @@ import { CategoryList } from "../../components/CategoryList";
 import { ListHeader } from "../../components/ListHeader";
 import { Appointment } from "../../components/Appointment";
 import { ListDivider } from "../../components/ListDivider";
+import { Background } from "../../components/Background";
 
 export function Home() {
   const [category, setCategory] = useState("");
@@ -49,27 +47,29 @@ export function Home() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Avatar imageUrl="https://github.com/feliperx.png" />
-        <Profile />
-        <ButtonAdd />
-      </View>
-      <CategoryList
-        categorySelected={category}
-        setCategory={handleCategorySelect}
-      />
-      <View style={styles.content}>
-        <ListHeader title="Partidas agendadas" subtitle="Total 7" />
-        <FlatList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Appointment data={item} />}
-          ItemSeparatorComponent={() => <ListDivider />}
-          style={styles.matches}
-          showsVerticalScrollIndicator={false}
+    <Background>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Avatar imageUrl="https://github.com/feliperx.png" />
+          <Profile />
+          <ButtonAdd />
+        </View>
+        <CategoryList
+          categorySelected={category}
+          setCategory={handleCategorySelect}
         />
+        <View style={styles.content}>
+          <ListHeader title="Partidas agendadas" subtitle="Total 7" />
+          <FlatList
+            data={appointments}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <Appointment data={item} />}
+            ItemSeparatorComponent={() => <ListDivider />}
+            style={styles.matches}
+            showsVerticalScrollIndicator={false}
+          />
+        </View>
       </View>
-    </View>
+    </Background>
   );
 }

@@ -10,8 +10,6 @@ import AppLoading from "expo-app-loading";
 
 import { Background } from "./src/components/Background";
 import { Routes } from "./src/routes";
-import { Home } from "./src/screens/Home";
-import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
