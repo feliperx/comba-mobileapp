@@ -2,34 +2,37 @@ import React from "react";
 import { ScrollView } from "react-native";
 
 import { categories } from "../../utils/categories";
-import {Category} from '../Category';
+import { Category } from "../Category";
 import { styles } from "./styles";
 
 type Props = {
   categorySelected: string;
-  setCategory: (categoryId : string) => void;
-}
+  setCategory: (categoryId: string) => void;
+  hasCheckbox?: boolean;
+};
 
-
-export function CategoryList({categorySelected, setCategory}: Props) {
+export function CategoryList({
+  categorySelected,
+  setCategory,
+  hasCheckbox = false,
+}: Props) {
   return (
-    <ScrollView 
+    <ScrollView
       style={styles.container}
-      horizontal 
-      showsHorizontalScrollIndicator={false} 
-      contentContainerStyle={{paddingRight:40}}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ paddingRight: 40 }}
     >
-      {
-        categories.map(category => (
-         <Category 
+      {categories.map((category) => (
+        <Category
           key={category.id}
           title={category.title}
           icon={category.icon}
           checked={category.id === categorySelected}
-          onPress = {() => setCategory(category.id)}
-         /> 
-        ) )
-      }
-     </ScrollView>
+          onPress={() => setCategory(category.id)}
+          hasCheckBox={hasCheckbox}
+        />
+      ))}
+    </ScrollView>
   );
 }
