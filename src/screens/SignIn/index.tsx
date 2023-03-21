@@ -5,8 +5,6 @@ import IllustrationImage from "../../assets/illustration.png";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { useNavigation } from "@react-navigation/native";
 
-import { Home } from "../Home";
-
 import { Background } from "../../components/Background";
 
 export function SignIn() {
@@ -14,7 +12,7 @@ export function SignIn() {
   const navigation = useNavigation();
 
   function handleSignIn() {
-    navigation.navigate(Home);
+    navigation.navigate('Home');
   }
 
   return (
