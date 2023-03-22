@@ -1,13 +1,14 @@
 import React, { ReactNode } from "react";
-import { View, Text } from "react-native";
+import { View, Text} from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { BorderlessButton } from "react-native-gesture-handler";
 
 
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";
-import { BorderlessButton } from "react-native-gesture-handler";
+
 
 
 type Props = {
@@ -44,6 +45,8 @@ export function Header({ title, action }: Props) {
           { action }
         </View>
       }
+
+      
     </LinearGradient>
   );
 }
