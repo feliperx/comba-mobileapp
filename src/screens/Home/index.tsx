@@ -18,8 +18,12 @@ export function Home() {
   const [category, setCategory] = useState("");
   const navigation = useNavigation();
 
-  function handleAppointment() {
+  function handleAppointmentDetails() {
     navigation.navigate('AppointmentDetails');
+  }
+
+  function handleAppointmentCreate() {
+    navigation.navigate('AppointmentCreate');
   }
 
   const appointments = [
@@ -59,7 +63,7 @@ export function Home() {
         <View style={styles.header}>
           <Avatar imageUrl="https://github.com/feliperx.png" />
           <Profile />
-          <ButtonAdd />
+          <ButtonAdd onPress={handleAppointmentCreate}/>
         </View>
         <CategoryList
           categorySelected={category}
@@ -71,7 +75,7 @@ export function Home() {
             data={appointments}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
-              <Appointment data={item} onPress={handleAppointment} />
+              <Appointment data={item} onPress={handleAppointmentDetails} />
             )}
             ItemSeparatorComponent={() => <ListDivider />}
             style={styles.matches}

@@ -39,7 +39,7 @@ export function AppointmentDetails() {
   return (
     <Background>
       <Header
-        title="oioioi"
+        title="Detalhes"
         action={
           <BorderlessButton>
             <Fontisto name="share" size={24} color={theme.colors.primary} />
