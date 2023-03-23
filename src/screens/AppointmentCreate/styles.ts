@@ -14,8 +14,12 @@ export const styles = StyleSheet.create ({
         fontSize: 18,
         color: theme.colors.heading,
     }, 
-
+    
     form: {
+    
+    },
+
+    formBody: {
         paddingHorizontal: 24, 
         marginTop: 32
     },
@@ -65,6 +69,12 @@ export const styles = StyleSheet.create ({
         fontFamily: theme.fonts.text500,
         color: theme.colors.highlight, 
         fontSize: 15,
+    },
+
+    caractereLimit: {
+        fontSize: 13,
+        fontFamily: theme.fonts.text400,
+        color: theme.colors.highlight
     }
     
 });
