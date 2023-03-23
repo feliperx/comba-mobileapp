@@ -27,6 +27,7 @@ import { ButtonIcon } from "../../components/ButtonIcon";
 import { GuildIcon } from "../../components/GuildIcon";
 import { SmallNumberInput } from "../../components/SmallNumberInput";
 import { TextArea } from "../../components/TextArea";
+import { Button } from "../../components/Button";
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState("");
@@ -98,7 +99,15 @@ export function AppointmentCreate() {
                 <Text style={styles.label}>Descricao</Text>
                 <Text style={styles.caractereLimit}>Max 100 caracteres</Text>
               </View>
-              <TextArea />
+              <TextArea 
+                multiline 
+                maxLength={100}
+                numberOfLines={5}
+                autoCorrect={false}
+              />
+            </View>
+            <View style={styles.footer}>
+              <Button title="Agendar" />
             </View>
           </View>
         </Background>

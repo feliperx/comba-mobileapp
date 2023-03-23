@@ -16,11 +16,11 @@ export const styles = StyleSheet.create ({
     }, 
     
     form: {
-    
+        paddingHorizontal: 24, 
     },
 
     formBody: {
-        paddingHorizontal: 24, 
+
         marginTop: 32
     },
 
@@ -48,8 +48,6 @@ export const styles = StyleSheet.create ({
     selectBody: {
         flex: 1, 
         alignItems: 'center', 
-
-
     }, 
 
     field: {
@@ -75,6 +73,11 @@ export const styles = StyleSheet.create ({
         fontSize: 13,
         fontFamily: theme.fonts.text400,
         color: theme.colors.highlight
+    }, 
+
+    footer: {
+        marginVertical: 20, 
+        marginBottom: 56,
     }
     
 });
