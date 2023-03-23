@@ -47,5 +47,24 @@ export const styles = StyleSheet.create ({
 
 
     }, 
+
+    field: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 30,
+    }, 
+
+    column:{
+        flexDirection: 'row', 
+        alignItems: 'center',
+
+    }, 
+
+    divider: {
+        marginRight: 4,
+        fontFamily: theme.fonts.text500,
+        color: theme.colors.highlight, 
+        fontSize: 15,
+    }
     
 });
