@@ -31,7 +31,7 @@ export function AppointmentCreate() {
   const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
 
   function handleCategorySelect(categoryId: string) {
-    categoryId === category ? setCategory("") : setCategory(categoryId);
+    setCategory(categoryId);
   }
 
   function handleOpenGuildsModal() {
