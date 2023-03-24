@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./styles";
@@ -13,17 +13,16 @@ import { Appointment } from "../../components/Appointment";
 import { ListDivider } from "../../components/ListDivider";
 import { Background } from "../../components/Background";
 
-
 export function Home() {
   const [category, setCategory] = useState("");
   const navigation = useNavigation();
 
   function handleAppointmentDetails() {
-    navigation.navigate('AppointmentDetails');
+    navigation.navigate("AppointmentDetails");
   }
 
   function handleAppointmentCreate() {
-    navigation.navigate('AppointmentCreate');
+    navigation.navigate("AppointmentCreate");
   }
 
   const appointments = [
@@ -51,6 +50,54 @@ export function Home() {
       date: "26/04 as 20h40",
       description: "Dia de ganhar mais xp",
     },
+    {
+      id: "3",
+      guild: {
+        id: "1",
+        name: "Legen.. wf ..dary",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "26/04 as 20h40",
+      description: "Dia de ganhar mais xp",
+    },
+    {
+      id: "4",
+      guild: {
+        id: "1",
+        name: "Legen.. wf ..dary",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "26/04 as 20h40",
+      description: "Dia de ganhar mais xp",
+    },
+    {
+      id: "5",
+      guild: {
+        id: "1",
+        name: "Legen.. wf ..dary",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "26/04 as 20h40",
+      description: "Dia de ganhar mais xp",
+    },
+    {
+      id: "6",
+      guild: {
+        id: "1",
+        name: "Legen.. wf ..dary",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "26/04 as 20h40",
+      description: "Dia de ganhar mais xp",
+    },
   ];
 
   function handleCategorySelect(categoryId: string) {
@@ -63,25 +110,25 @@ export function Home() {
         <View style={styles.header}>
           <Avatar imageUrl="https://github.com/feliperx.png" />
           <Profile />
-          <ButtonAdd onPress={handleAppointmentCreate}/>
+          <ButtonAdd onPress={handleAppointmentCreate} />
         </View>
         <CategoryList
           categorySelected={category}
           setCategory={handleCategorySelect}
         />
-        <View style={styles.content}>
-          <ListHeader title="Partidas agendadas" subtitle="Total 7" />
-          <FlatList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <Appointment data={item} onPress={handleAppointmentDetails} />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
+
+        <ListHeader title="Partidas agendadas" subtitle="Total 7" />
+        <FlatList
+          data={appointments}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <Appointment data={item} onPress={handleAppointmentDetails} />
+          )}
+          ItemSeparatorComponent={() => <ListDivider />}
+          style={styles.matches}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{paddingBottom: 60}}
+        />
       </View>
     </Background>
   );
