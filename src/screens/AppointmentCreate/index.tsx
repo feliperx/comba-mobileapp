@@ -6,34 +6,33 @@ import {
   Platform,
   ScrollView,
 } from "react-native";
-import { BorderlessButton, RectButton } from "react-native-gesture-handler";
-import { Feather, Fontisto } from "@expo/vector-icons";
+import {  RectButton } from "react-native-gesture-handler";
+import { Feather } from "@expo/vector-icons";
 
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";
-import BannerImg from "../../assets/banner.png";
 
-import { Profile } from "../../components/Profile";
-import { Avatar } from "../../components/Avatar";
-import { ButtonAdd } from "../../components/ButtonAdd";
 import { CategoryList } from "../../components/CategoryList";
-import { ListHeader } from "../../components/ListHeader";
-import { Appointment } from "../../components/Appointment";
-import { ListDivider } from "../../components/ListDivider";
 import { Background } from "../../components/Background";
 import { Header } from "../../components/Header";
-import { Member } from "../../components/Member";
-import { ButtonIcon } from "../../components/ButtonIcon";
 import { GuildIcon } from "../../components/GuildIcon";
 import { SmallNumberInput } from "../../components/SmallNumberInput";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
+import { useNavigation } from "@react-navigation/native";
 
 export function AppointmentCreate() {
+  
+  const navigation = useNavigation();
   const [category, setCategory] = useState("");
+
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory("") : setCategory(categoryId);
+  }
+
+  function handleGuilds(){
+    navigation.navigate('Guilds');
   }
 
   return (
@@ -59,7 +58,9 @@ export function AppointmentCreate() {
           />
           <View style={styles.form}>
             <View style={styles.formBody}>
-              <RectButton>
+              <RectButton 
+                onPress={handleGuilds}
+              >
                 <View style={styles.select}>
                   {
                     // <View style={styles.image} />

@@ -1,6 +1,9 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 
+import { Guild } from "../../components/Guild";
+import { ListDivider } from "../../components/ListDivider";
+
 import { styles } from "./styles";
 
 
@@ -13,16 +16,29 @@ export function Guilds() {
     icon: null,
     owner: true  
     
-  }]
+  },
+  {
+    id: '2', 
+    name: 'Legen.. wf .. dary',
+    icon: null,
+    owner: false  
+    
+  },
+
+
+]
 
   return (
     <View style={styles.container}>
       <FlatList 
+        style={styles.guilds}
         data={guilds}
         keyExtractor={item => item.id}
         renderItem={({item}) => (
-          <View/>
+          <Guild data={item}/>
         )}
+        ItemSeparatorComponent={ListDivider}
+        showsVerticalScrollIndicator={false}
       
       />
     </View>
