@@ -20,7 +20,6 @@ export const styles = StyleSheet.create ({
     },
 
     formBody: {
-
         marginTop: 32
     },
 

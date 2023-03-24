@@ -50,7 +50,8 @@ export function AppointmentDetails() {
         <View style={styles.bannerContent} >
           <Text style={styles.title}>Legen.. wf .. dary</Text>
           <Text style={styles.subtitle}>
-            Vamos para cima, sem perder mmr, jamais.
+            Vamos para cima, sem perder mmr, jamais. {'\n'}
+            GG
           </Text>
         </View>
       </ImageBackground>

@@ -10,6 +10,7 @@ export const styles = StyleSheet.create ({
     justifyContent: 'center', 
     alignItems: 'center',
     paddingTop: getStatusBarHeight(),
+    paddingBottom: 15,
     paddingHorizontal: 24,
 
 
