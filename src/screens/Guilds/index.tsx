@@ -1,40 +1,47 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 
-import { Guild } from "../../components/Guild";
+import { Guild, GuildProps } from "../../components/Guild";
 import { ListDivider } from "../../components/ListDivider";
-import { ModalView } from "../../components/ModalView";
 
 import { styles } from "./styles";
 
-export function Guilds() {
+type Props = {
+  handleGuildSelect: (guild: GuildProps) => void;
+}
+
+export function Guilds({handleGuildSelect}: Props) {
   const guilds = [
     {
       id: "1",
-      name: "Legen.. wf .. dary",
-      icon: null,
+      name: "Legen.. wf ..ary",
+      icon: 'image.png',
       owner: true,
     },
     {
       id: "2",
-      name: "Legen.. wf .. dary",
-      icon: null,
-      owner: false,
-    },
+      name: "Galera GG",
+      icon: 'image.png',
+      owner: true,
+    }
   ];
 
   return (
-    <ModalView>
       <View style={styles.container}>
         <FlatList
           style={styles.guilds}
           data={guilds}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Guild data={item} />}
+          renderItem={({ item }) => (
+          <Guild 
+            data={item}
+            onPress={() => handleGuildSelect(item)}  
+          />
+          
+          )}
           ItemSeparatorComponent={ListDivider}
           showsVerticalScrollIndicator={false}
         />
       </View>
-    </ModalView>
   );
 }
