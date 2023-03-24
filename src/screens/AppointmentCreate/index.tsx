@@ -6,7 +6,7 @@ import {
   Platform,
   ScrollView,
 } from "react-native";
-import {  RectButton } from "react-native-gesture-handler";
+import { RectButton } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 
 import { styles } from "./styles";
@@ -20,20 +20,20 @@ import { SmallNumberInput } from "../../components/SmallNumberInput";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
+import { ModalView } from "../../components/ModalView";
+import { Guilds } from "../Guilds";
 
 export function AppointmentCreate() {
-  
   const navigation = useNavigation();
   const [category, setCategory] = useState("");
-
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory("") : setCategory(categoryId);
   }
 
-  function handleGuilds(){
-    navigation.navigate('Guilds');
-  }
+  // function handleGuilds(){
+  //   navigation.navigate('Guilds');
+  // }
 
   return (
     <KeyboardAvoidingView
@@ -58,9 +58,7 @@ export function AppointmentCreate() {
           />
           <View style={styles.form}>
             <View style={styles.formBody}>
-              <RectButton 
-                onPress={handleGuilds}
-              >
+              <RectButton>
                 <View style={styles.select}>
                   {
                     // <View style={styles.image} />
@@ -100,8 +98,8 @@ export function AppointmentCreate() {
                 <Text style={styles.label}>Descricao</Text>
                 <Text style={styles.caractereLimit}>Max 100 caracteres</Text>
               </View>
-              <TextArea 
-                multiline 
+              <TextArea
+                multiline
                 maxLength={100}
                 numberOfLines={5}
                 autoCorrect={false}
@@ -113,6 +111,9 @@ export function AppointmentCreate() {
           </View>
         </Background>
       </ScrollView>
+      <ModalView visible={true}>
+        <Guilds />
+      </ModalView>
     </KeyboardAvoidingView>
   );
 }
