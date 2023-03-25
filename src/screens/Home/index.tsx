@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, FlatList, ScrollView } from "react-native";
+import React, { useState, useContext } from "react";
+import { View, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./styles";
@@ -16,6 +16,7 @@ import { Background } from "../../components/Background";
 export function Home() {
   const [category, setCategory] = useState("");
   const navigation = useNavigation();
+
 
   function handleAppointmentDetails() {
     navigation.navigate("AppointmentDetails");

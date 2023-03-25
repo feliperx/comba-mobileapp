@@ -7,9 +7,15 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Background } from "../../components/Background";
 
+import { useAuth } from "../../hooks/auth";
+
 export function SignIn() {
   const [text, setText] = useState("");
   const navigation = useNavigation();
+
+  const { user } = useAuth();
+
+  console.log(user);
 
   function handleSignIn() {
     navigation.navigate('Home');
