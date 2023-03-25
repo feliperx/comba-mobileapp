@@ -15,8 +15,6 @@ export function SignIn() {
 
   const { user } = useAuth();
 
-  console.log(user);
-
   function handleSignIn() {
     navigation.navigate('Home');
   }
