@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Text, View, Image, Alert, ActivityIndicatorBase } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { Text, View, Image, Alert, ActivityIndicator } from "react-native";
 
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";
@@ -11,12 +10,12 @@ import { Background } from "../../components/Background";
 import { useAuth } from "../../hooks/auth";
 
 export function SignIn() {
-  const [text, setText] = useState("");
-  const navigation = useNavigation();
 
-  const { user, loading, signIn } = useAuth();
+  const { loading, signIn } = useAuth();
 
   async function handleSignIn() {
+
+    console.log('OAIDOE');
     try {
       await signIn();
     } catch (error) {
@@ -42,8 +41,9 @@ export function SignIn() {
             favoritos com seus amigos
           </Text>
           {loading ? (
-            <ActivityIndicatorBase color={theme.colors.primary} />
+            <ActivityIndicator color={theme.colors.primary} />
           ) : (
+            
             <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} />
           )}
         </View>
