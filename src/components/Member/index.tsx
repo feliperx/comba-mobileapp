@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Avatar } from "../Avatar";
 
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";
+
+import { Avatar } from "../Avatar";
 
 export type MemberProps = {
   id: string;

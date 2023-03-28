@@ -1,11 +1,10 @@
 import { Feather } from "@expo/vector-icons";
 import React from "react";
 import { Text, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
+
 import { theme } from "../../global/styles/theme";
-
-import { GuildIcon } from "../GuildIcon";
-
 import { styles } from "./styles";
+import { GuildIcon } from "../GuildIcon";
 
 export type GuildProps = {
   id: string;

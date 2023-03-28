@@ -3,8 +3,6 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity,
-  TouchableOpacityProps,
 } from "react-native";
 import { RectButton, RectButtonProps} from 'react-native-gesture-handler';
 

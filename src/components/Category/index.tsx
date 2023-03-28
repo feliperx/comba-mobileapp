@@ -1,10 +1,9 @@
 import React from "react";
-import { ScrollView, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { SvgProps } from "react-native-svg";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { categories } from "../../utils/categories";
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";
 
