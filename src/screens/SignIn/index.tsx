@@ -10,17 +10,19 @@ import { Background } from "../../components/Background";
 import { useAuth } from "../../hooks/auth";
 
 export function SignIn() {
-
   const { loading, signIn } = useAuth();
 
   async function handleSignIn() {
-
-    console.log('OAIDOE');
+    console.log("OAIDOE");
     try {
       await signIn();
     } catch (error) {
       Alert.alert(error);
     }
+  }
+
+  function handleSignIn2() {
+    console.log("OAIDOE");
   }
 
   return (
@@ -43,7 +45,6 @@ export function SignIn() {
           {loading ? (
             <ActivityIndicator color={theme.colors.primary} />
           ) : (
-            
             <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} />
           )}
         </View>
