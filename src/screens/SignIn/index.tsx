@@ -13,16 +13,11 @@ export function SignIn() {
   const { loading, signIn } = useAuth();
 
   async function handleSignIn() {
-    console.log("OAIDOE");
     try {
       await signIn();
     } catch (error) {
       Alert.alert(error);
     }
-  }
-
-  function handleSignIn2() {
-    console.log("OAIDOE");
   }
 
   return (

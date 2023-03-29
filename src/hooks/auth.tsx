@@ -12,7 +12,7 @@ import { api } from "../services/api";
 
 type User = {
   id: string;
-  usename: string;
+  username: string;
   firstName: string;
   avatar: string;
   email: string;

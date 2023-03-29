@@ -109,7 +109,6 @@ export function Home() {
     <Background>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Avatar imageUrl="https://github.com/feliperx.png" />
           <Profile />
           <ButtonAdd onPress={handleAppointmentCreate} />
         </View>
