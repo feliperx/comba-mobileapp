@@ -9,7 +9,7 @@ const { CDN_IMAGE } = process.env;
 
 type Props = {
   guildId: string;
-  iconId: string;
+  iconId: string | null;
 };
 
 export function GuildIcon({ guildId, iconId }: Props) {

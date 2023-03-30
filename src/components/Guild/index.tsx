@@ -15,6 +15,7 @@ export type GuildProps = {
 
 type Props = TouchableOpacityProps & {
   data: GuildProps;
+  noIconSelected?: boolean;
 }
 
 
