@@ -12,19 +12,19 @@ import { ListHeader } from "../../components/ListHeader";
 import { Appointment, AppointmentProps } from "../../components/Appointment";
 import { ListDivider } from "../../components/ListDivider";
 import { Background } from "../../components/Background";
+import { Load } from "../../components/Load";
 
 import { COLLECTION_APPOINTMENTS } from "../../configs/database";
-import { Load } from "../../components/Load";
+
 
 export function Home() {
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
-  const [appointments, setAppointments] = useState<AppointmentProps[]>([])
+  const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
   const navigation = useNavigation();
 
-
-  function handleAppointmentDetails() {
-    navigation.navigate("AppointmentDetails");
+  function handleAppointmentDetails(guildSelected: AppointmentProps) {
+    navigation.navigate("AppointmentDetails", { guildSelected });
   }
 
   function handleAppointmentCreate() {
@@ -36,21 +36,22 @@ export function Home() {
   }
 
   async function loadAppointments() {
-    const response = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS); 
+    const response = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
     const storage: AppointmentProps[] = response ? JSON.parse(response) : [];
 
     if (category) {
-      setAppointments(storage.filter(item => item.category === category));
-
-    }else{
+      setAppointments(storage.filter((item) => item.category === category));
+    } else {
       setAppointments(storage);
     }
     setLoading(false);
   }
 
-  useFocusEffect(useCallback(() => {
-    loadAppointments();
-  },[category]));
+  useFocusEffect(
+    useCallback(() => {
+      loadAppointments();
+    }, [category])
+  );
 
   return (
     <Background>
@@ -64,21 +65,30 @@ export function Home() {
           setCategory={handleCategorySelect}
         />
 
-        {loading ? <Load/> : 
-        <>
-          <ListHeader title="Partidas agendadas" subtitle={`Total ${appointments.length}`} />
-          <FlatList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <Appointment data={item} onPress={handleAppointmentDetails} />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={{paddingBottom: 60}}
-          />
-        </>}
+        {loading ? (
+          <Load />
+        ) : (
+          <>
+            <ListHeader
+              title="Partidas agendadas"
+              subtitle={`Total ${appointments.length}`}
+            />
+            <FlatList
+              data={appointments}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => (
+                <Appointment
+                  data={item}
+                  onPress={() => handleAppointmentDetails(item)}
+                />
+              )}
+              ItemSeparatorComponent={() => <ListDivider />}
+              style={styles.matches}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={{ paddingBottom: 60 }}
+            />
+          </>
+        )}
       </View>
     </Background>
   );
