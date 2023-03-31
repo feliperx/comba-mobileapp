@@ -75,7 +75,6 @@ export function AppointmentCreate() {
       COLLECTION_APPOINTMENTS,
       JSON.stringify([...appointments, newAppointment])
     );
-    console.log(COLLECTION_APPOINTMENTS);
 
     navigation.navigate('Home');
   }
