@@ -66,7 +66,7 @@ export function Home() {
 
         {loading ? <Load/> : 
         <>
-          <ListHeader title="Partidas agendadas" subtitle="Total 7" />
+          <ListHeader title="Partidas agendadas" subtitle={`Total ${appointments.length}`} />
           <FlatList
             data={appointments}
             keyExtractor={(item) => item.id}
