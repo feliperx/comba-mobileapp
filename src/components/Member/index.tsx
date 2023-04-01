@@ -9,7 +9,7 @@ import { Avatar } from "../Avatar";
 export type MemberProps = {
   id: string;
   username: string;
-  avatarUrl: string;
+  avatar_url: string;
   status: string;
 };
 
@@ -23,7 +23,7 @@ export function Member({ data }: Props) {
 
   return (
     <View style={styles.container}>
-      <Avatar imageUrl={data.avatarUrl} />
+      <Avatar imageUrl={data.avatar_url} />
       <View>
         <Text style={styles.title}>{data.username}</Text>
         <View style={styles.status}>
@@ -36,7 +36,7 @@ export function Member({ data }: Props) {
             ]}
           />
           <Text style={styles.nameStatus}>
-            {isOnline ? "Online" : "Offline"}
+            {isOnline ? "Online" : "Ocupado"}
           </Text>
         </View>
       </View>
