@@ -38,8 +38,6 @@ export function AppointmentDetails() {
   const route = useRoute();
   const { guildSelected } = route.params as Params;
 
-  console.log(widget);
-
   function handleShareInvitation() {
     const message = Platform.OS === 'ios' ? 
     `Junte-se a ${guildSelected.guild.name}`
