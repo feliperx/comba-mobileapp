@@ -1,5 +1,12 @@
 # 🚀 comba-mobileapp
 
+<br><br>
+<div align="center"> 
+    <img src="https://user-images.githubusercontent.com/50178206/229328057-039867a3-bd67-4ed0-a165-a6723cadb773.png"/>
+</div>
+<br>
+
+
 ### 💻 Projeto
 
 Aplicativo para lhe ajudar a conectar-se e organiza o momento de diversão e jogar com os amigos. Crie grupos para jogar seus games favoritos com seus amigos com esse App que possui autenticação com Discord.
