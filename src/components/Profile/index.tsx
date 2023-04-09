@@ -5,9 +5,14 @@ import { useAuth } from "../../hooks/auth";
 
 import { styles } from "./styles";
 import { Avatar } from "../Avatar";
-import { RectButton } from "react-native-gesture-handler";
+import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
-export function Profile() {
+type Props = RectButtonProps & {
+  handleButton: () => void;
+}
+
+
+export function Profile({handleButton, ...rest} : Props) {
   const { user, signOut } = useAuth();
   
   function handleSignOut() {
@@ -26,7 +31,7 @@ export function Profile() {
 
   return (
     <View style={styles.container}>
-      <RectButton onPress={handleSignOut}>
+      <RectButton onPress={handleButton} {...rest}>
         <Avatar imageUrl={user.avatar} />
       </RectButton>
       <View>

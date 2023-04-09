@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, KeyboardAvoidingView } from "react-native";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -15,11 +15,15 @@ import { Background } from "../../components/Background";
 import { Load } from "../../components/Load";
 
 import { COLLECTION_APPOINTMENTS } from "../../configs/database";
+import { Platform } from "react-native";
+import { ModalView } from "../../components/ModalView";
+import { SignOut } from "../SignOut";
 
 
 export function Home() {
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
+  const [openSignOutModal, setOpenSignOutModal] = useState(false);
   const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
   const navigation = useNavigation();
 
@@ -47,6 +51,10 @@ export function Home() {
     setLoading(false);
   }
 
+  function handleSignOut() {
+    setOpenSignOutModal(true);
+  }
+
   useFocusEffect(
     useCallback(() => {
       loadAppointments();
@@ -54,10 +62,14 @@ export function Home() {
   );
 
   return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
     <Background>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Profile />
+          <Profile handleButton={handleSignOut}/>
           <ButtonAdd onPress={handleAppointmentCreate} />
         </View>
         <CategoryList
@@ -91,5 +103,9 @@ export function Home() {
         )}
       </View>
     </Background>
+    <ModalView visible={openSignOutModal} closeModal={handleSignOut} typeModal="short">
+        <SignOut/>
+      </ModalView>
+    </KeyboardAvoidingView>
   );
 }

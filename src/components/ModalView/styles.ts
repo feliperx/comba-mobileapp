@@ -7,9 +7,13 @@ export const styles = StyleSheet.create ({
     backgroundColor: theme.colors.overlay,
   }, 
 
-  container: {
+  containerFull: {
     flex: 1, 
     marginTop: 100,
+  }, 
+  containerShort: {
+    flex: 1, 
+    marginTop: 550,
   }, 
 
   bar: {

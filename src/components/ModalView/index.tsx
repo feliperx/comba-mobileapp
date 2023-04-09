@@ -12,9 +12,10 @@ import { Background } from "../Background";
 type Props = ModalProps & {
   children: ReactNode;
   closeModal: () => void;
+  typeModal?: string;
 };
 
-export function ModalView({ children, closeModal, ...rest }: Props) {
+export function ModalView({ children, closeModal, typeModal, ...rest }: Props) {
   return (
     <Modal
       transparent={true}
@@ -24,9 +25,15 @@ export function ModalView({ children, closeModal, ...rest }: Props) {
     >
       <TouchableWithoutFeedback onPress={closeModal}>
         <View style={styles.overlay}>
-          <View style={styles.container}>
+          <View
+            style={
+              typeModal == "short"
+                ? styles.containerShort
+                : styles.containerFull
+            }
+          >
             <Background>
-              <View style={styles.bar} />
+              { typeModal != "short" && <View style={styles.bar} />}
               {children}
             </Background>
           </View>
