@@ -50,11 +50,11 @@ export function Home() {
     setLoading(false);
   }
 
-  function handleOpenSignOut() {
+  function handleOpenSignOutModal() {
     setOpenSignOutModal(true);
   }
 
-  function handleCloseSignOut() {
+  function handleCloseSignOutModal() {
     setOpenSignOutModal(false);
   }
 
@@ -71,7 +71,7 @@ export function Home() {
     >
       <Background>
           <View style={styles.header}>
-            <Profile handleButton={handleOpenSignOut} />
+            <Profile handleButton={handleOpenSignOutModal} />
             <ButtonAdd onPress={handleAppointmentCreate} />
           </View>
           <CategoryList
@@ -106,10 +106,10 @@ export function Home() {
       </Background>
       <ModalView
         visible={openSignOutModal}
-        closeModal={handleCloseSignOut}
+        closeModal={handleCloseSignOutModal}
         typeModal="short"
       >
-        <SignOut />
+        <SignOut handleNoSignOutButton={handleCloseSignOutModal}/>
       </ModalView>
     </KeyboardAvoidingView>
   );

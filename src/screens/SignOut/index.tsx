@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { Alert, Text, View, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./styles";
-import { RectButton } from "react-native-gesture-handler";
 import { useAuth } from "../../hooks/auth";
 import { Load } from "../../components/Load";
 
-export function SignOut() {
+
+type Props = {
+  handleNoSignOutButton: () => void;
+}
+
+export function SignOut({handleNoSignOutButton} : Props) {
   const [loading, setLoading] = useState(false);
   const { signOut } = useAuth();
+  const navigation = useNavigation();
 
   async function handleYesSignOutButton() {
     try {
@@ -32,7 +38,7 @@ export function SignOut() {
             Deseja sair do <Text style={styles.titleBold}>COMBA</Text> ?
           </Text>
           <View style={styles.content}>
-            <TouchableOpacity onPress={() => console.log("oi")}>
+            <TouchableOpacity onPress={handleNoSignOutButton}>
               <View style={styles.noButton}>
                 <Text style={styles.buttonTitle}>Não</Text>
               </View>
