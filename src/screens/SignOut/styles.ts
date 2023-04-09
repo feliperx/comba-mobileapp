@@ -24,7 +24,7 @@ export const styles = StyleSheet.create ({
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
 
   },
 
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create ({
     borderWidth: 2,
     borderColor: theme.colors.secondary50,
     borderRadius: 8,
-    marginRight: 8
+    marginRight: 8,
   },
 
   yesButton: {
