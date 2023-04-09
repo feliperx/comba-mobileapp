@@ -13,7 +13,7 @@ export const styles = StyleSheet.create ({
   }, 
   containerShort: {
     flex: 1, 
-    marginTop: 550,
+    marginTop: 530,
   }, 
 
   bar: {

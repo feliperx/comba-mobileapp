@@ -19,7 +19,6 @@ import { Platform } from "react-native";
 import { ModalView } from "../../components/ModalView";
 import { SignOut } from "../SignOut";
 
-
 export function Home() {
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
@@ -51,8 +50,12 @@ export function Home() {
     setLoading(false);
   }
 
-  function handleSignOut() {
+  function handleOpenSignOut() {
     setOpenSignOutModal(true);
+  }
+
+  function handleCloseSignOut() {
+    setOpenSignOutModal(false);
   }
 
   useFocusEffect(
@@ -66,45 +69,47 @@ export function Home() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
-    <Background>
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Profile handleButton={handleSignOut}/>
-          <ButtonAdd onPress={handleAppointmentCreate} />
-        </View>
-        <CategoryList
-          categorySelected={category}
-          setCategory={handleCategorySelect}
-        />
+      <Background>
+          <View style={styles.header}>
+            <Profile handleButton={handleOpenSignOut} />
+            <ButtonAdd onPress={handleAppointmentCreate} />
+          </View>
+          <CategoryList
+            categorySelected={category}
+            setCategory={handleCategorySelect}
+          />
 
-        {loading ? (
-          <Load />
-        ) : (
-          <>
-            <ListHeader
-              title="Partidas agendadas"
-              subtitle={`Total ${appointments.length}`}
-            />
-            <FlatList
-              data={appointments}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => (
-                <Appointment
-                  data={item}
-                  onPress={() => handleAppointmentDetails(item)}
-                />
-              )}
-              ItemSeparatorComponent={() => <ListDivider />}
-              style={styles.matches}
-              showsVerticalScrollIndicator={false}
-              contentContainerStyle={{ paddingBottom: 60 }}
-            />
-          </>
-        )}
-      </View>
-    </Background>
-    <ModalView visible={openSignOutModal} closeModal={handleSignOut} typeModal="short">
-        <SignOut/>
+          {loading ? (
+            <Load />
+          ) : (
+            <>
+              <ListHeader
+                title="Partidas agendadas"
+                subtitle={`Total ${appointments.length}`}
+              />
+              <FlatList
+                data={appointments}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                  <Appointment
+                    data={item}
+                    onPress={() => handleAppointmentDetails(item)}
+                  />
+                )}
+                ItemSeparatorComponent={() => <ListDivider />}
+                style={styles.matches}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ paddingBottom: 60 }}
+              />
+            </>
+          )}
+      </Background>
+      <ModalView
+        visible={openSignOutModal}
+        closeModal={handleCloseSignOut}
+        typeModal="short"
+      >
+        <SignOut />
       </ModalView>
     </KeyboardAvoidingView>
   );
