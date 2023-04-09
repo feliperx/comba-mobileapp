@@ -6,12 +6,11 @@ import { styles } from "./styles";
 import { useAuth } from "../../hooks/auth";
 import { Load } from "../../components/Load";
 
-
 type Props = {
   handleNoSignOutButton: () => void;
-}
+};
 
-export function SignOut({handleNoSignOutButton} : Props) {
+export function SignOut({ handleNoSignOutButton }: Props) {
   const [loading, setLoading] = useState(false);
   const { signOut } = useAuth();
   const navigation = useNavigation();
