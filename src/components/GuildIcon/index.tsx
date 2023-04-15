@@ -3,7 +3,6 @@ import { Image, View } from "react-native";
 
 import { styles } from "./styles";
 import DiscordSvg from '../../assets/discord.svg';
-import { theme } from "../../global/styles/theme";
 
 const { CDN_IMAGE } = process.env;
 
