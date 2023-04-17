@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Alert, Text, View, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./styles";
 import { useAuth } from "../../hooks/auth";
@@ -13,7 +12,6 @@ type Props = {
 export function SignOut({ handleNoSignOutButton }: Props) {
   const [loading, setLoading] = useState(false);
   const { signOut } = useAuth();
-  const navigation = useNavigation();
 
   async function handleYesSignOutButton() {
     try {
