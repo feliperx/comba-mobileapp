@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { View, FlatList, KeyboardAvoidingView } from "react-native";
+import { View, FlatList, KeyboardAvoidingView, Platform } from "react-native";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -13,10 +13,9 @@ import { Appointment, AppointmentProps } from "../../components/Appointment";
 import { ListDivider } from "../../components/ListDivider";
 import { Background } from "../../components/Background";
 import { Load } from "../../components/Load";
+import { ModalView } from "../../components/ModalView";
 
 import { COLLECTION_APPOINTMENTS } from "../../configs/database";
-import { Platform } from "react-native";
-import { ModalView } from "../../components/ModalView";
 import { SignOut } from "../SignOut";
 
 export function Home() {
