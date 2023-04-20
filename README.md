@@ -1,4 +1,4 @@
-# 🚀 comba-mobileapp
+# 🚀 Comba
 
 <br><br>
 <div align="center"> 
