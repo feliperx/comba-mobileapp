@@ -1,5 +1,5 @@
-#<div align="center">
- <h2>  Comba :space_invader:
+<div align="center">
+ <h1>  Comba :space_invader: </h1>
 </div>
 
 
