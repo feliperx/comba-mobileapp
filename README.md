@@ -16,22 +16,22 @@ Aplicativo feito no evento NLW6 da Rocketseat, para lhe ajudar a conectar-se e o
 
 ### :sparkles: Tecnologias
 
-- [ ] React Native
-- [ ] Typescript
-- [ ] Expo
-- [ ] Context API
-- [ ] Async Storage
-- [ ] Vector Icons
-- [ ] React Native Svg e Svg Transform
-- [ ] Axios
-- [ ] Gradient colors
-- [ ] OAuth2 Discord
-- [ ] Expo Google Fonts
-- [ ] React Navigation Stack
-- [ ] React Native Gesture Handler
-- [ ] Expo Authentication
-- [ ] React Native Share
-- [ ] Deep Link
+- [X] React Native
+- [X] Typescript
+- [X] Expo
+- [X] Context API
+- [X] Async Storage
+- [X] Vector Icons
+- [X] React Native Svg e Svg Transform
+- [X] Axios
+- [X] Gradient colors
+- [X] OAuth2 Discord
+- [X] Expo Google Fonts
+- [X] React Navigation Stack
+- [X] React Native Gesture Handler
+- [X] Expo Authentication
+- [X] React Native Share
+- [X] Deep Link
 
 ### 🚀 Iniciando
 
